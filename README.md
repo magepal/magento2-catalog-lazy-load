@@ -1,9 +1,9 @@
 ## Catalog Images Lazy Load for Magento2
 Reduce loading time by Loading images on demand and save server resources.
-###Benefits
+### Benefits
 Lazy Load extension for Magento 2 only load images within the customer viewpoint and automotically load relivant images as the customer scrolls
 
-####1 - Installation  Gmail Smtp App
+#### 1 - Installation  Gmail Smtp App
 ##### Manual Installation
 Install Gmail Smtp App for Magento2
  * Download the extension
@@ -13,17 +13,17 @@ Install Gmail Smtp App for Magento2
  * Flush cache
 
 
-#####Using Composer
+##### Using Composer
 
 ```
 composer require magepal/magento2-cataloglazyload
 ```
 
-####2 -  Enable Gmail Smtp App
+#### 2 -  Enable Gmail Smtp App
  * php -f bin/magento module:enable --clear-static-content MagePal_CatalogLazyLoad
  * php -f bin/magento setup:upgrade
 
-####3 - Config Gmail Smtp App
+#### 3 - Config Gmail Smtp App
 Log into your Magento Admin, then goto Stores -> Configuration -> MagePal -> Catalog Lazy Load
 
 ## Preview
