@@ -24,7 +24,8 @@ composer require magepal/magento2-cataloglazyload
  * php -f bin/magento setup:upgrade
 
 ####3 - Config Gmail Smtp App
-Log into your Magento Admin, then goto Stores -> Configuration -> Advanced -> System -> Gmail/Google Apps SMTP Pro and enter your email credentials
+Log into your Magento Admin, then goto Stores -> Configuration -> MagePal -> Catalog Lazy Load
 
 ## Preview
-![image](https://cloud.githubusercontent.com/assets/1415141/18802388/7302402a-81b6-11e6-8c19-7a7f01be8743.png)
+![magento2 lazy load images](https://user-images.githubusercontent.com/1415141/28195477-6a774b46-6818-11e7-8010-6bcaa33c0c9f.jpg)
+
