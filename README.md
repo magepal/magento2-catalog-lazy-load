@@ -29,3 +29,6 @@ Log into your Magento Admin, then goto Stores -> Configuration -> MagePal -> Cat
 ## Preview
 ![magento2 lazy load images](https://user-images.githubusercontent.com/1415141/28195477-6a774b46-6818-11e7-8010-6bcaa33c0c9f.jpg)
 
+----
+
+Need help setting up or want to customize this extension to meet your business needs? Please email support@magepal.com and if we like your idea we will add this feature for free or at a discounted rate.
