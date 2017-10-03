@@ -6,10 +6,10 @@
 define([
     'jquery',
     'MagePal_CatalogLazyLoad/js/jquery.lazyload'
-], function($){
+], function($) {
 
-    return function (options) {
-        $(function () {
+    return function(options) {
+        $(function() {
             $("img.lazy").lazyload();
 
             $("img.lazy").one("appear", function() {

@@ -16,7 +16,6 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper {
 
     static $ignoreLazyLoad = 0;
 
-
     /**
      * If enabled
      *
@@ -31,7 +30,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper {
      *
      * @return int
      */
-    public function getSkipAmount(){
+    public function getSkipAmount() {
         return $this->scopeConfig->getValue(self::XML_SKIP_AMOUNT, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
 
@@ -40,8 +39,8 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper {
      *
      * @return bool
      */
-    public function applyLazyLoad(){
-        if(self::$ignoreLazyLoad < $this->getSkipAmount() * 2){
+    public function applyLazyLoad() {
+        if (self::$ignoreLazyLoad < $this->getSkipAmount() * 2) {
             self::$ignoreLazyLoad++;
             return false;
         }

@@ -39,14 +39,13 @@ class Js extends Template {
         parent::__construct($context, $data);
     }
 
-
     /**
      * Render tag manager JS
      *
      * @return string
      */
     protected function _toHtml() {
-       if (!$this->_lazyLoadHelper->isEnabled()) {
+        if (!$this->_lazyLoadHelper->isEnabled()) {
             return '';
         }
 
