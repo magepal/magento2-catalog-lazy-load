@@ -10,14 +10,14 @@ namespace MagePal\CatalogLazyLoad\Plugin\Block\Product;
 
 class ImagePlugin
 {
-    /** @var \Magepal\CatalogLazyLoad\Helper\Data */
+    /** @var \MagePal\CatalogLazyLoad\Helper\Data */
     protected $helper;
 
     /**
-     * @param \Magepal\CatalogLazyLoad\Helper\Data $helper
+     * @param \MagePal\CatalogLazyLoad\Helper\Data $helper
      */
     public function __construct(
-        \Magepal\CatalogLazyLoad\Helper\Data $helper
+        \MagePal\CatalogLazyLoad\Helper\Data $helper
     ) {
         $this->helper = $helper;
     }
