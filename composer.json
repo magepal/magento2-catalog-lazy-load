@@ -3,7 +3,17 @@
     "description":"Improve the load time of your Magento 2 categories pages by loading your images on demand with our Lazy Load Extension",
     "keywords": [
         "magento 2",
-        "lazy load"
+        "lazy load",
+        "magento2",
+        "lazy-loading",
+        "lazyload images",
+        "lazyloading",
+        "catalog images lazyload",
+        "lazy load image plugin",
+        "lazy load extension",
+        "lazyload images magento2",
+        "magento faster page load",
+        "enhance website performance"
     ],
     "require": {
         "php": "~5.6.0|7.0.2|7.0.4|~7.0.6|~7.1.0",
