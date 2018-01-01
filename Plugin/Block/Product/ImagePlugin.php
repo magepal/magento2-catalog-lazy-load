@@ -2,7 +2,7 @@
 /**
  * Catalog Lazy Load Image
  *
- * Copyright © 2017 MagePal LLC. All rights reserved.
+ * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -24,7 +24,7 @@ class ImagePlugin
 
     public function afterToHtml(\Magento\Catalog\Block\Product\Image $subject, $result)
     {
-        if($this->helper->isEnabled() && $this->helper->applyLazyLoad()){
+        if ($this->helper->isEnabled() && $this->helper->applyLazyLoad()) {
             $find = ['img class="'];
             $replace = ['img class="lazy swatch-option-loading '];
             return str_replace($find, $replace, $result);
@@ -35,7 +35,7 @@ class ImagePlugin
 
     public function beforeToHtml(\Magento\Catalog\Block\Product\Image $subject)
     {
-        if($this->helper->isEnabled() && $this->helper->applyLazyLoad()){
+        if ($this->helper->isEnabled() && $this->helper->applyLazyLoad()) {
             $customAttributes = trim($subject->getCustomAttributes() . ' data-original="' . $subject->getImageUrl() . '"');
 
             //$subject->setImageUrl('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC');
@@ -44,6 +44,5 @@ class ImagePlugin
         }
 
         return [$subject];
-
     }
 }

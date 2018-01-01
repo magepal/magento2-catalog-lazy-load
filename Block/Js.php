@@ -3,7 +3,7 @@
 /**
  * Catalog Lazy Load Image
  *
- * Copyright © 2017 MagePal LLC. All rights reserved.
+ * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -16,7 +16,8 @@ use MagePal\CatalogLazyLoad\Helper\Data as LazyLoadHelper;
 /**
  * LazyLoad Page Block
  */
-class Js extends Template {
+class Js extends Template
+{
 
     /**
      * LazyLoad data
@@ -39,18 +40,17 @@ class Js extends Template {
         parent::__construct($context, $data);
     }
 
-
     /**
      * Render tag manager JS
      *
      * @return string
      */
-    protected function _toHtml() {
-       if (!$this->_lazyLoadHelper->isEnabled()) {
+    protected function _toHtml()
+    {
+        if (!$this->_lazyLoadHelper->isEnabled()) {
             return '';
         }
 
         return parent::_toHtml();
     }
-
 }
