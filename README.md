@@ -9,7 +9,7 @@ Reduce loading time by Loading images on demand and save server resources.
 
 
 ### Benefits
-Lazy Load extension for Magento 2 only load images within the customer viewpoint and automotically load relivant images as the customer scrolls
+Lazy Load extension for Magento 2 only load images within the customer viewpoint and automatically load relivant images as the customer scrolls
 
 ## Installation
 
