@@ -5,7 +5,7 @@
 
 Reduce loading time by Loading images on demand and save server resources.
 
-![magento2 lazy load images](https://user-images.githubusercontent.com/1415141/28195477-6a774b46-6818-11e7-8010-6bcaa33c0c9f.jpg)
+![magento2 lazy load images](https://user-images.githubusercontent.com/1415141/34655610-5f2c22ea-f3da-11e7-9beb-28dc2ff217da.gif)
 
 
 ### Benefits
