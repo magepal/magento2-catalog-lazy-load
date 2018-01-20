@@ -23,7 +23,7 @@
     "type": "magento2-module",
     "version": "1.5.2",
     "license": [
-        "MagePal License"
+        "proprietary"
     ],
     "authors": [
         {
