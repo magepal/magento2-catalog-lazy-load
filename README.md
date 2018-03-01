@@ -1,3 +1,5 @@
+<a href="http://www.magepal.com" ><img src="https://image.ibb.co/dHBkYH/Magepal_logo.png" width="100" align="right" /></a>
+
 ## Catalog Images Lazy Load for Magento2
 
 [![Total Downloads](https://poser.pugx.org/magepal/magento2-cataloglazyload/downloads)](https://packagist.org/packages/magepal/magento2-cataloglazyload)
