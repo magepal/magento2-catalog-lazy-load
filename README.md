@@ -5,7 +5,13 @@
 [![Total Downloads](https://poser.pugx.org/magepal/magento2-cataloglazyload/downloads)](https://packagist.org/packages/magepal/magento2-cataloglazyload)
 [![Latest Stable Version](https://poser.pugx.org/magepal/magento2-cataloglazyload/v/stable)](https://packagist.org/packages/magepal/magento2-cataloglazyload)
 
-Reduce loading time by Loading images on demand and save server resources.
+Like most e-commerce site by default Magento loads, all products images on page load, which can lead to your site becoming extremely slow on mobile or other devices as your customer browser tries to download all images which they may not even view or see. 
+
+Our free Lazy Loading extension for Magento 2 highly improves your page loading time and Google Page Ranking by only loading product images as the user scrolls. Images are only requested and download from your server once that photo is needed and the user is about to scroll to that item. Fully integrated with default Magento 2 functionality, our lazy loading functionality is applied to product listing pages, search pages, and product detail pages to enhance the load of related, up-sell and cross-sell products as needed.
+
+Having a good user experience is crucial to the success of your online store and improving your page loading time will lead to better conversion, improved SEO score, and page ranking.
+
+Reduce load time by Loading images on-demand while saving server resources, bandwidth and improving your users' experience.
 
 ![magento2 lazy load images](https://image.ibb.co/bYO7DH/Catalog_Images_Lazy_Load_for_Magento2.gif)
 
