@@ -5,8 +5,8 @@
  *
  * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
- * http://www.magepal.com | support@magepal.com
-*/
+ * https://www.magepal.com | support@magepal.com
+ */
 
 namespace MagePal\CatalogLazyLoad\Block;
 
@@ -48,7 +48,7 @@ class Js extends Template
      */
     protected function _toHtml()
     {
-        if (!$this->_lazyLoadHelper->isEnabled()) {
+        if (!$this->_lazyLoadHelper->isEnabled() || !$this->_lazyLoadHelper->hasLazyLoadImages()) {
             return '';
         }
 

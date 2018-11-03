@@ -1,4 +1,4 @@
-<a href="http://www.magepal.com" title="Magento 2 Extensions" ><img src="https://image.ibb.co/dHBkYH/Magepal_logo.png" width="100" align="right" alt="Magento2 Extension" /></a>
+<a href="https://www.magepal.com" title="Magento 2 Extensions" ><img src="https://image.ibb.co/dHBkYH/Magepal_logo.png" width="100" align="right" alt="Magento2 Extension" /></a>
 
 ## Catalog Images Lazy Load for Magento2
 

@@ -5,8 +5,8 @@
  *
  * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
- * http://www.magepal.com | support@magepal.com
-*/
+ * https://www.magepal.com | support@magepal.com
+ */
 
 namespace MagePal\CatalogLazyLoad\Helper;
 
@@ -50,5 +50,14 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         }
 
         return true;
+    }
+
+    /**
+     * Display JS code
+     * @return bool
+     */
+    public function hasLazyLoadImages()
+    {
+        return self::$ignoreLazyLoad > 0;
     }
 }
