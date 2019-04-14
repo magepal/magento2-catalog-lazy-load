@@ -1,8 +1,5 @@
 <?php
-
 /**
- * Catalog Lazy Load Image
- *
  * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
  * https://www.magepal.com | support@magepal.com
@@ -10,11 +7,21 @@
 
 namespace MagePal\CatalogLazyLoad\Helper;
 
-class Data extends \Magento\Framework\App\Helper\AbstractHelper
+use Magento\Framework\App\Helper\AbstractHelper;
+use Magento\Store\Model\ScopeInterface;
+
+/**
+ * Class Data
+ * @package MagePal\CatalogLazyLoad\Helper
+ */
+class Data extends AbstractHelper
 {
     const XML_PATH_ACTIVE = 'cataloglazyload/general/active';
     const XML_SKIP_AMOUNT = 'cataloglazyload/general/skip_amount';
 
+    /**
+     * @var int
+     */
     public static $ignoreLazyLoad = 0;
 
     /**
@@ -26,7 +33,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         return $this->scopeConfig->isSetFlag(
             self::XML_PATH_ACTIVE,
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+            ScopeInterface::SCOPE_STORE
         );
     }
 
@@ -39,7 +46,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         return $this->scopeConfig->getValue(
             self::XML_SKIP_AMOUNT,
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+            ScopeInterface::SCOPE_STORE
         );
     }
 

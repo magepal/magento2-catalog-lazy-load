@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Catalog Lazy Load Image
  *
@@ -15,7 +14,8 @@ use Magento\Framework\View\Element\Template\Context;
 use MagePal\CatalogLazyLoad\Helper\Data as LazyLoadHelper;
 
 /**
- * LazyLoad Page Block
+ * Class Js
+ * @package MagePal\CatalogLazyLoad\Block
  */
 class Js extends Template
 {

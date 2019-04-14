@@ -1,7 +1,5 @@
 <?php
 /**
- * Catalog Lazy Load Image
- *
  * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
  * https://www.magepal.com | support@magepal.com
@@ -9,21 +7,33 @@
 
 namespace MagePal\CatalogLazyLoad\Plugin\Block\Product;
 
+use Magento\Catalog\Block\Product\Image;
+use MagePal\CatalogLazyLoad\Helper\Data;
+
+/**
+ * Class ImagePlugin
+ * @package MagePal\CatalogLazyLoad\Plugin\Block\Product
+ */
 class ImagePlugin
 {
-    /** @var \MagePal\CatalogLazyLoad\Helper\Data */
+    /** @var Data */
     protected $helper;
 
     /**
-     * @param \MagePal\CatalogLazyLoad\Helper\Data $helper
+     * @param Data $helper
      */
     public function __construct(
-        \MagePal\CatalogLazyLoad\Helper\Data $helper
+        Data $helper
     ) {
         $this->helper = $helper;
     }
 
-    public function afterToHtml(\Magento\Catalog\Block\Product\Image $subject, $result)
+    /**
+     * @param Image $subject
+     * @param $result
+     * @return mixed
+     */
+    public function afterToHtml(Image $subject, $result)
     {
         if ($this->helper->isEnabled() && $this->helper->applyLazyLoad()) {
             $find = ['img class="'];
@@ -34,12 +44,17 @@ class ImagePlugin
         return $result;
     }
 
-    public function beforeToHtml(\Magento\Catalog\Block\Product\Image $subject)
+    /**
+     * @param Image $subject
+     * @return array
+     */
+    public function beforeToHtml(Image $subject)
     {
         if ($this->helper->isEnabled() && $this->helper->applyLazyLoad()) {
-            $customAttributes = trim($subject->getCustomAttributes() . ' data-original="' . $subject->getImageUrl() . '"');
+            $customAttributes = trim(
+                $subject->getCustomAttributes() . ' data-original="' . $subject->getImageUrl() . '"'
+            );
 
-            //$subject->setImageUrl('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC');
             $subject->setImageUrl('');
             $subject->setCustomAttributes($customAttributes);
         }
