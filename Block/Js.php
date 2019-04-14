@@ -23,7 +23,7 @@ class Js extends Template
     /**
      * LazyLoad data
      *
-     * @var /MagePal\CatalogLazyLoad\Helper\Data
+     * @var LazyLoadHelper
      */
     protected $_lazyLoadHelper = null;
 
