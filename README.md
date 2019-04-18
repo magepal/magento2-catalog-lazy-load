@@ -15,6 +15,7 @@ Reduce load time by Loading images on-demand while saving server resources, band
 
 Improve your customer shopping experience with our new [Catalog Hover Image for Magento](https://www.magepal.com/catalog-hover-image-for-magento.html)
 
+
 ![magento2 lazy load images](https://image.ibb.co/bYO7DH/Catalog_Images_Lazy_Load_for_Magento2.gif)
 
 
