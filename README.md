@@ -13,7 +13,7 @@ Having a good user experience is crucial to the success of your online store and
 
 Reduce load time by Loading images on-demand while saving server resources, bandwidth and improving your users' experience.
 
-Need faster load time? Improve your pagespeed with our [HTML Minifier for Magento2](https://www.magepal.com/magento2/extensions/html-minifier.html)
+Improve your customer shopping experience with our new [Catalog Hover Image for Magento](https://www.magepal.com/catalog-hover-image-for-magento.html)
 
 ![magento2 lazy load images](https://image.ibb.co/bYO7DH/Catalog_Images_Lazy_Load_for_Magento2.gif)
 
