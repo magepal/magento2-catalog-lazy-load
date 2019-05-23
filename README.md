@@ -24,28 +24,17 @@ Lazy Load extension for Magento 2 only load images within the customer viewpoint
 
 ## Installation
 
-#### Step 1
 ##### Using Composer (recommended)
 
 ```
 composer require magepal/magento2-cataloglazyload
 ```
 
+## Documentation
 
-##### Manual Installation
-To install Lazy Load for Magento2
- * Download the extension
- * Unzip the file
- * Create a folder {Magento root}/app/code/MagePal/CatalogLazyLoad
- * Copy the content from the unzip folder
- * Flush cache
+[How to Installing Catalog Images Lazy Load for Magento2](https://www.magepal.com/help/docs/magento-lazy-load-images/#installation)
 
-#### Step 2 -  Enable Lazy Load for Magento2
- * php -f bin/magento module:enable --clear-static-content MagePal_CatalogLazyLoad
- * php -f bin/magento setup:upgrade
-
-#### Step 3 - Config Lazy Load for Magento2
-Log into your Magento Admin, then goto Stores -> Configuration -> MagePal -> Catalog Lazy Load
+[How to setup Catalog Images Lazy Load for Magento2](https://www.magepal.com/help/docs/magento-lazy-load-images/#configuration)
 
 Contribution
 ---

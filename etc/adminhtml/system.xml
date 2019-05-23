@@ -19,11 +19,39 @@
                 <label>About MagePal Catalog Lazy Load Image</label>
                 <attribute type="expanded">1</attribute>
                 <comment>
-                    <![CDATA[
-                    <strong>Copyright © 2019 <a href="https://www.magepal.com" target="_blank">www.magepal.com</a> / <a href="mailto:support@magepal.com">support@magepal.com</a></strong><br />
-                    Discover other must have extensions at <a href="https://www.magepal.com" target="_blank">www.magepal.com</a>. Thanks for choosing MagePal Extensions.<br/><br/>
+                <![CDATA[
+                    <div id="magepal-info">
+                        Copyright © 2019 <a href="https://www.magepal.com/magento2/extensions.html?utm_source=cataloglazyload&utm_medium=admin" target="_blank">MagePal, LLC</a>
+                        <a href="https://www.magepal.com/help/docs/magento-lazy-load-images/?utm_source=cataloglazyload&utm_medium=admin#documentation" target="_blank">Documentation</a>
+                        <a href="https://www.magepal.com/help/docs/magento-lazy-load-images/?utm_source=cataloglazyload&utm_medium=admin#support">Support</a>
+                        <a href="https://www.magepal.com/help/docs/magento-lazy-load-images/?utm_source=cataloglazyload&utm_medium=admin#current_version" target="_blank">Latest Version</a>
+                        <a href="https://www.magepal.com/lazy-load.html?utm_source=cataloglazyload&utm_medium=admin" target="_blank">Extension Detail</a>
+                        <a href="https://www.magepal.com/magento2/extensions.html?utm_source=cataloglazyload&utm_medium=admin" target="_blank">More Extensions</a>
+                    </div>
+                    <div id="magepal-promo">
+                        Quickly preview alternative images of your products, learn more about our new
+                        <a href="https://www.magepal.com/catalog-hover-image-for-magento.html?utm_source=cataloglazyload&utm_medium=admin" target="_blank">Catalog Hover Image for Magento</a> extension.
+                    </div>
                     <hr style="border-top: 1px solid #e3e3e3" />
-                  ]]>
+                    <style>
+                        #magepal-info a {
+                            font-weight: bold;
+                            border-left: 2px solid #e3e3e3;
+                            padding-left:10px;
+                            padding-right:10px;
+                            color: #ef7e1e;
+                        }
+
+                        #magepal-info a:first-child {
+                            padding-left: 5px;
+                            border-left: none;
+                        }
+
+                        #magepal-info {
+                            padding-bottom: 5px;
+                        }
+                     </style>
+              ]]>
                 </comment>
                 <field id="module_version" translate="label" type="label" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Module Version</label>
