@@ -1,6 +1,6 @@
 <a href="https://www.magepal.com" title="Magento 2 Extensions" ><img src="https://image.ibb.co/dHBkYH/Magepal_logo.png" width="100" align="right" alt="Magento2 Extension" /></a>
 
-## Catalog Images Lazy Load for Magento2
+# Catalog Images Lazy Load for Magento2
 
 [![Total Downloads](https://poser.pugx.org/magepal/magento2-cataloglazyload/downloads)](https://packagist.org/packages/magepal/magento2-cataloglazyload)
 [![Latest Stable Version](https://poser.pugx.org/magepal/magento2-cataloglazyload/v/stable)](https://packagist.org/packages/magepal/magento2-cataloglazyload)
@@ -14,6 +14,19 @@ Having a good user experience is crucial to the success of your online store and
 Reduce load time by Loading images on-demand while saving server resources, bandwidth and improving your users' experience.
 
 Improve your customer shopping experience with our new [Catalog Hover Image for Magento](https://www.magepal.com/catalog-hover-image-for-magento.html)
+
+### What set us apart from other Magento Lazy Load extension?
+A Lazy Load extension was meant to speed up your site, yet 99% of Magento 2 Lazy Load extensions make your website loading appear slower to your customer by constantly delaying loading of your photos which are worth a million words.
+
+Unlike other Lazy Load extensions for Magento, our extension take into consideration that the first 'x' amount of products images will appear above your browser page fold on your category pages and should be displayed as quickly as possible. Therefore we skip applying lazy loading functionality for these images. 
+
+This is important because:
+
+1. Your site will appear to load much faster to your customer because they won't have to wait for Javascript to activate your images.
+2. Your products images will start to display immediately as your browser fetches them, instead of waiting for Javascript to activate them which will normally cause 1-5 seconds delay and largely depended on the speed of your customer's computer.
+3. On subsequences visit, your top 'x' images just appear because they are already cached, while other extensions will still delay loading. 
+
+You can quickly and easily configure the number of images to show instantly base on your site need in our configurable in system configuration.
 
 
 ![magento2 lazy load images](https://image.ibb.co/bYO7DH/Catalog_Images_Lazy_Load_for_Magento2.gif)
