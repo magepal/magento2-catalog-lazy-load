@@ -57,7 +57,7 @@ class Data extends AbstractHelper
      */
     public function applyLazyLoad()
     {
-        if (self::$ignoreLazyLoad < $this->getSkipAmount() * 2) {
+        if (self::$ignoreLazyLoad < $this->getSkipAmount()) {
             self::$ignoreLazyLoad++;
             return false;
         }
