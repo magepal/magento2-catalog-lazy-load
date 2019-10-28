@@ -39,11 +39,22 @@ class ImagePlugin
             $orgImageUrl = $subject->getImageUrl();
             $subject->setImageUrl('');
 
+            $customAttributes = trim(
+                $subject->getCustomAttributes() . 'magepal-data-original'
+            );
+
+            $subject->setCustomAttributes($customAttributes);
+
             $result = $proceed();
 
-            $find = ['img class="'];
+            $find = [
+                'img class="',
+                'magepal-data-original'
+            ];
+
             $replace = [
-                sprintf('img data-original="%s" class="lazy swatch-option-loading ', $orgImageUrl)
+                'img class="lazy swatch-option-loading ',
+                sprintf(' data-original="%s"', $orgImageUrl),
             ];
 
             return str_replace($find, $replace, $result);
