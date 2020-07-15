@@ -7,6 +7,7 @@
 
 namespace MagePal\CatalogLazyLoad\Plugin\Block\Product;
 
+use Closure;
 use Magento\Catalog\Block\Product\Image;
 use MagePal\CatalogLazyLoad\Helper\Data;
 
@@ -30,18 +31,26 @@ class ImagePlugin
 
     /**
      * @param Image $subject
-     * @param \Closure $proceed
+     * @param Closure $proceed
      * @return mixed
      */
-    public function aroundToHtml(Image $subject, \Closure $proceed)
+    public function aroundToHtml(Image $subject, Closure $proceed)
     {
         if ($this->helper->isEnabled() && $this->helper->applyLazyLoad()) {
             $orgImageUrl = $subject->getImageUrl();
             $subject->setImageUrl('');
 
-            $customAttributes = trim(
-                $subject->getCustomAttributes() . 'magepal-data-original'
-            );
+            //Magento 2.4.0
+            if (is_array($subject->getCustomAttributes())) {
+                $customAttributes = array_merge(
+                    $subject->getCustomAttributes(),
+                    ['magepal-data-original' => 'placeholder']
+                );
+            } else {
+                $customAttributes = trim(
+                    $subject->getCustomAttributes() . 'magepal-data-original'
+                );
+            }
 
             $subject->setCustomAttributes($customAttributes);
 
@@ -49,12 +58,14 @@ class ImagePlugin
 
             $find = [
                 'img class="',
+                'magepal-data-original="placeholder"',
                 'magepal-data-original'
             ];
 
             $replace = [
                 'img class="lazy swatch-option-loading ',
                 sprintf(' data-original="%s"', $orgImageUrl),
+                sprintf(' data-original="%s"', $orgImageUrl)
             ];
 
             return str_replace($find, $replace, $result);
