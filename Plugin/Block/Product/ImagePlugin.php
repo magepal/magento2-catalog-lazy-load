@@ -63,9 +63,9 @@ class ImagePlugin
             ];
 
             $replace = [
-                'img class="lazy swatch-option-loading ',
-                sprintf(' data-original="%s"', $orgImageUrl),
-                sprintf(' data-original="%s"', $orgImageUrl)
+                'img class="swatch-option-loading ',
+                sprintf(' data-mage-init=\'{"MagePalLazyLoad":{}}\' data-original="%s"', $orgImageUrl),
+                sprintf(' data-mage-init=\'{"MagePalLazyLoad":{}}\' data-original="%s"', $orgImageUrl)
             ];
 
             return str_replace($find, $replace, $result);

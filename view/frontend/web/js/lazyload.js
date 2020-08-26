@@ -9,12 +9,12 @@ define([
     'MagePal_CatalogLazyLoad/js/jquery.lazyload'
 ], function ($) {
 
-    return function (options) {
+    return function (options, element) {
         $(function () {
-            $("img.lazy").lazyload();
-
-            $("img.lazy").one("appear", function () {
-                $(this).removeClass('swatch-option-loading')
+            $(element).lazyload({
+                load: function () {
+                    $(this).removeClass('swatch-option-loading').removeAttr('data-original');
+                }
             });
         });
     };
