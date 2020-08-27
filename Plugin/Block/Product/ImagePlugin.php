@@ -30,45 +30,44 @@ class ImagePlugin
     }
 
     /**
-     * @param ProductImage $subject
+     * @param Image $subject
      * @param string $result
      * @return string
      */
-    public function afterToHtml(ProductImage $subject, $result)
+    public function afterToHtml(Image $subject, $result)
     {
         if ($this->helper->isEnabled() && $this->helper->applyLazyLoad()) {
 
-            // re-encode characters that DOMDocument doesn't like
-            $result = mb_convert_encoding($result, 'HTML-ENTITIES', "UTF-8");
+            $result = preg_replace_callback(
+                '#<img(?:\s+[-\w]+=(?:"[^"]*"|\'[^\']*\'))+\s*/>#mu',
+                function($matches) {
+                    $img = $matches[0];
+                    $search = [' src="'];
+                    $replace = [' data-original="'];
 
-            // HTML is too messy to manipulate by string replacement only, let's parse it
-            $dom = new \DOMDocument();
-            $dom->loadHTML($result, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+                    if (strpos($img, 'class=') === false) {
+                        $search[] = '/>';
+                        $replace[] = ' class="swatch-option-loading"/>';
+                    }
+                    else {
+                        $search[] = ' class="';
+                        $replace[] = ' class="swatch-option-loading ';
+                    }
 
-            // there could be more than one <img> for rollovers or whatever...
-            $images = $dom->getElementsByTagName('img');
-            /** @var $img \DOMElement */
-            foreach($images as $img) {
-                // need swatch-option-loading for the typical spinning load icon
-                $classes = $img->getAttribute('class');
-                if (!preg_match('/(?<=^|\s)swatch-option-loading(?=$|\s)/', $classes)) {
-                    $classes .= ' swatch-option-loading';
-                    $img->setAttribute('class', $classes);
-                }
+                    if (strpos($img, 'data-mage-init=') === false) {
+                        $search[] = '/>';
+                        $replace[] =' data-mage-init=\'{"MagePalLazyLoad":{}}\'/>';
+                    }
+                    else {
+                        $search[] = ' data-mage-init=\'{';
+                        $replace[] = ' data-mage-init=\'{"MagePalLazyLoad":{},';
+                    }
 
-                // data-mage-init safely loads JavaScript library
-                $init = json_decode($img->getAttribute('data-mage-init') ?: '{}', true);
-                $init = array_merge($init, ['MagePalLazyLoad' => '']);
-                $img->setAttribute('data-mage-init', json_encode($init));
+                    return str_replace($search, $replace, $img);
+                },
+                $result
+            );
 
-                // src attribute will be set by JS library eventually
-                $img->setAttribute('data-original', $img->getAttribute('src'));
-                $img->removeAttribute('src');
-            }
-
-            // saveHTML() preserves whitespace between elements but rewrites tags in a compact way
-            $result = $dom->saveHTML();
-        }
         return $result;
     }
 }
