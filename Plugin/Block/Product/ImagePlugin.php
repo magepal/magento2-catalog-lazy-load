@@ -11,10 +11,6 @@ use Closure;
 use Magento\Catalog\Block\Product\Image;
 use MagePal\CatalogLazyLoad\Helper\Data;
 
-/**
- * Class ImagePlugin
- * @package MagePal\CatalogLazyLoad\Plugin\Block\Product
- */
 class ImagePlugin
 {
     /** @var Data */
@@ -31,46 +27,43 @@ class ImagePlugin
 
     /**
      * @param Image $subject
-     * @param Closure $proceed
-     * @return mixed
+     * @param string $result
+     * @return string
      */
-    public function aroundToHtml(Image $subject, Closure $proceed)
+    public function afterToHtml(Image $subject, $result)
     {
         if ($this->helper->isEnabled() && $this->helper->applyLazyLoad()) {
-            $orgImageUrl = $subject->getImageUrl();
-            $subject->setImageUrl('');
 
-            //Magento 2.4.0
-            if (is_array($subject->getCustomAttributes())) {
-                $customAttributes = array_merge(
-                    $subject->getCustomAttributes(),
-                    ['magepal-data-original' => 'placeholder']
-                );
-            } else {
-                $customAttributes = trim(
-                    $subject->getCustomAttributes() . 'magepal-data-original'
-                );
-            }
+            $result = preg_replace_callback(
+                '#<img(?:\s+[-\w]+=(?:"[^"]*"|\'[^\']*\'))+\s*/>#mu',
+                function ($matches) {
+                    $img = $matches[0];
+                    $search = [' src="'];
+                    $replace = [' data-original="'];
 
-            $subject->setCustomAttributes($customAttributes);
+                    if (strpos($img, 'class=') === false) {
+                        $search[] = '/>';
+                        $replace[] = ' class="swatch-option-loading" />';
+                    } else {
+                        $search[] = ' class="';
+                        $replace[] = ' class="swatch-option-loading ';
+                    }
 
-            $result = $proceed();
+                    if (strpos($img, 'data-mage-init=') === false) {
+                        $search[] = '/>';
+                        $replace[] = ' data-mage-init=\'{"MagePalLazyLoad":{}}\' />';
+                    } else {
+                        $search[] = ' data-mage-init=\'{';
+                        $replace[] = ' data-mage-init=\'{"MagePalLazyLoad":{},';
+                    }
 
-            $find = [
-                'img class="',
-                'magepal-data-original="placeholder"',
-                'magepal-data-original'
-            ];
-
-            $replace = [
-                'img class="lazy swatch-option-loading ',
-                sprintf(' data-original="%s"', $orgImageUrl),
-                sprintf(' data-original="%s"', $orgImageUrl)
-            ];
-
-            return str_replace($find, $replace, $result);
-        } else {
-            return $proceed();
+                    return str_replace($search, $replace, $img);
+                },
+                $result
+            );
         }
+
+        return $result;
     }
 }
+

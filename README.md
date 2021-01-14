@@ -23,7 +23,7 @@ Unlike other Lazy Load extensions for Magento, our extension take into considera
 This is important because:
 
 1. Your site will appear to load much faster to your customer because they won't have to wait for Javascript to activate your images.
-2. Your products images will start to display immediately as your browser fetches them, instead of waiting for Javascript to activate them which will normally cause 1-5 seconds delay and largely depended on the speed of your customer's computer.
+2. Your products image will start to display immediately as your browser fetches them, instead of waiting for Javascript to activate them which will normally cause 1-5 seconds delay and largely depended on the speed of your customer's computer.
 3. On subsequences visit, your top 'x' images just appear because they are already cached, while other extensions will still delay loading. 
 
 You can quickly and easily configure the number of images to show instantly base on your site need in our configurable in system configuration.
@@ -78,4 +78,4 @@ Magento 2 Extensions
 - [Order Confirmation Page Miscellaneous Scripts](https://www.magepal.com/magento2/extensions/order-confirmation-miscellaneous-scripts-for-magento-2.html)
 - [HTML Minifier for Magento2](https://www.magepal.com/magento2/extensions/html-minifier.html)
 
-© MagePal LLC. | [www.magepal.com](https:/www.magepal.com)
+© MagePal LLC. | [www.magepal.com](https://www.magepal.com)
