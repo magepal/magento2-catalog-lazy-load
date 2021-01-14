@@ -10,6 +10,7 @@
     <module name="MagePal_CatalogLazyLoad" setup_version="1.4.2">
         <sequence>
             <module name="Magento_Catalog"/>
+            <module name="MagePal_Core"/>
         </sequence>
     </module>
 </config>

@@ -11,10 +11,6 @@ use Closure;
 use Magento\Catalog\Block\Product\Image;
 use MagePal\CatalogLazyLoad\Helper\Data;
 
-/**
- * Class ImagePlugin
- * @package MagePal\CatalogLazyLoad\Plugin\Block\Product
- */
 class ImagePlugin
 {
     /** @var Data */
@@ -40,25 +36,23 @@ class ImagePlugin
 
             $result = preg_replace_callback(
                 '#<img(?:\s+[-\w]+=(?:"[^"]*"|\'[^\']*\'))+\s*/>#mu',
-                function($matches) {
+                function ($matches) {
                     $img = $matches[0];
                     $search = [' src="'];
                     $replace = [' data-original="'];
 
                     if (strpos($img, 'class=') === false) {
                         $search[] = '/>';
-                        $replace[] = ' class="swatch-option-loading"/>';
-                    }
-                    else {
+                        $replace[] = ' class="swatch-option-loading" />';
+                    } else {
                         $search[] = ' class="';
                         $replace[] = ' class="swatch-option-loading ';
                     }
 
                     if (strpos($img, 'data-mage-init=') === false) {
                         $search[] = '/>';
-                        $replace[] =' data-mage-init=\'{"MagePalLazyLoad":{}}\'/>';
-                    }
-                    else {
+                        $replace[] = ' data-mage-init=\'{"MagePalLazyLoad":{}}\' />';
+                    } else {
                         $search[] = ' data-mage-init=\'{';
                         $replace[] = ' data-mage-init=\'{"MagePalLazyLoad":{},';
                     }
@@ -67,7 +61,9 @@ class ImagePlugin
                 },
                 $result
             );
+        }
 
         return $result;
     }
 }
+
