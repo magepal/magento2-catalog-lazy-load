@@ -37,7 +37,7 @@ class ImagePlugin
             $result = preg_replace_callback(
                 '#<img(?:\s+[-\w]+=(?:"[^"]*"|\'[^\']*\'))+\s*/>#mu',
                 function ($matches) {
-                    $img = $matches[0];
+                    $img = (string) $matches[0];
                     $search = [' src="'];
                     $replace = [' data-original="'];
 
